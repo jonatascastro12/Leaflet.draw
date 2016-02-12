@@ -37,7 +37,8 @@ L.Draw.Circle = L.Draw.SimpleShape.extend({
 	},
 
 	_fireCreatedEvent: function () {
-		var circle = new L.Circle(this._startLatLng, this._shape.getRadius(), this.options.shapeOptions);
+		var circle = new L.Circle(this._startLatLng, this.options.shapeOptions);
+            	circle.setRadius(this._shape.getRadius());
 		L.Draw.SimpleShape.prototype._fireCreatedEvent.call(this, circle);
 	},
 
